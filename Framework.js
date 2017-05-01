@@ -1,3 +1,4 @@
+// some text
 function Circle( x,y,size,color )
 {
 	context.fillStyle = color;
