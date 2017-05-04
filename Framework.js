@@ -36,11 +36,6 @@ function HitTest( x0,y0,w0,h0,x1,y1,w1,h1 )
 	}
 }
 
-function Image( x,y,image )
-{
-	context.drawImage( image,x,y );	
-}
-
 function Random( min,max )
 {
 	if( min > max )
