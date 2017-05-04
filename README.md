@@ -14,10 +14,9 @@ Commands Here:
 	HitTest:
 		-Tests if two user defined squares are colliding.
 		-Parameters: x1, y1, width1, height1, x2, y2, width2, height2.
-	HitTestX:
-		-Going away soon, please ignore.
-	HitTestY:
-		-Going away soon, please ignore.
+	Image:
+		-Draws an image.
+		-Parameters: x, y, image.
 	Random:
 		-Returns a random number with user specified bounds.
 		-Parameters: minimum, maximum.
