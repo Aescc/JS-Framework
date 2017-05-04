@@ -36,28 +36,9 @@ function HitTest( x0,y0,w0,h0,x1,y1,w1,h1 )
 	}
 }
 
-function HitTestX( x0,w0,x1,w1 )
+function Image( x,y,image )
 {
-	if( x0 < x1 + w1 && x0 + w0 > x1 )
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-function HitTestY( y0,h0,y1,h1 )
-{
-	if( y0 < y1 + h1 && y0 + h0 > y1)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	context.drawImage( image,x,y );	
 }
 
 function Random( min,max )
