@@ -19,7 +19,7 @@ Commands Here:
 		-Parameters: minimum, maximum.
 	Rect:
 		-Draws a rectangle.
-		-Parameters: x1, y1, width1, height1, color.
+		-Parameters: x1, y1, width1, height1, color, opacity(optional).
 	Text:
 		-Writes some text.
 		-Parameters: x, y, message, color, font style.
