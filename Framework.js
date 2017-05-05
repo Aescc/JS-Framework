@@ -48,10 +48,20 @@ function Random( min,max )
 	return randomNumber;
 }
 
-function Rect( x,y,width,height,color )
+function Rect( x,y,width,height,color,alpha = 1.0 )
 {
-	context.fillStyle = color;
-	context.fillRect( x,y,width,height );
+	if( alpha === 1.0 )
+	{
+		context.fillStyle = color;
+		context.fillRect( x,y,width,height );
+	}
+	else
+	{
+		context.globalAlpha = alpha;
+		context.fillStyle = color;
+		context.fillRect( x,y,width,height );
+		context.globalAlpha = 1;
+	}
 }
 
 function Text( x,y,message,color,font )
