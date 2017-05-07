@@ -36,11 +36,7 @@ function CheckMousePos( e )
 	const root = document.documentElement;
 	const mouseX = e.clientX - rect.left - root.scrollLeft;
 	const mouseY = e.clientY - rect.top - root.scrollTop;
-	return 
-	{
-		x: mouseX,
-		y: mouseY
-	};
+	return { x: mouseX,y: mouseY };
 }
 
 function Update()
