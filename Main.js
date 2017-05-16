@@ -1,5 +1,5 @@
-const canvas = document.getElementById("gc");
-const context = canvas.getContext("2d");
+const canvas = document.getElementById( 'gc' );
+const context = canvas.getContext( '2d' );
 
 var keyMap = [];
 
