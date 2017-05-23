@@ -1,8 +1,16 @@
 const canvas = document.getElementById( 'gc' );
 const context = canvas.getContext( '2d' );
 
+// Strings
+
+// Numbers
+
+// Booleans
+
+// Arrays
 var keyMap = [];
 
+// Objects
 var mouse = { x: 0,y: 0 }
 
 window.onload = function()
@@ -23,6 +31,7 @@ window.onload = function()
 			mouse.x = CheckMousePos( e ).x;
 			mouse.y = CheckMousePos( e ).y;
 	} );
+	Init();
 };
 
 function CheckClick()
@@ -37,6 +46,11 @@ function CheckMousePos( e )
 	const mouseX = e.clientX - rect.left - root.scrollLeft;
 	const mouseY = e.clientY - rect.top - root.scrollTop;
 	return { x: mouseX,y: mouseY };
+}
+
+function Init()
+{
+	
 }
 
 function Update()
