@@ -64,7 +64,7 @@ function Rect( x,y,width,height,color,alpha = 1.0 )
 	}
 }
 
-function Text( x,y,message,color,font )
+function Text( x,y,message,color,font = "20PX Arial" )
 {
 	context.fillStyle = color;
 	context.font = font;
