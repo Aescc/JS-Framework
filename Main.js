@@ -15,6 +15,7 @@ var mouse = { x: 0,y: 0 }
 
 window.onload = function()
 {
+	Init();
 	const fps = 30;
 	setInterval(function()
 	{
@@ -31,7 +32,6 @@ window.onload = function()
 			mouse.x = CheckMousePos( e ).x;
 			mouse.y = CheckMousePos( e ).y;
 	} );
-	Init();
 };
 
 function CheckClick()
