@@ -60,7 +60,7 @@ function Rect( x,y,width,height,color,alpha = 1.0 )
 		context.globalAlpha = alpha;
 		context.fillStyle = color;
 		context.fillRect( x,y,width,height );
-		context.globalAlpha = 1;
+		context.globalAlpha = 1.0;
 	}
 }
 
