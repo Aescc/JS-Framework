@@ -12,7 +12,7 @@ Commands Here:
 		-Returns the distance between two points.
 		-Parameters: x1, y1, x2, y2.
 	HitTest:
-		-Tests if two user defined squares are colliding.
+		-Tests if two user defined rectangles are colliding.
 		-Parameters: x1, y1, width1, height1, x2, y2, width2, height2.
 	Random:
 		-Returns a random number with user specified bounds.
