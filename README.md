@@ -22,4 +22,4 @@ Commands Here:
 		-Parameters: x1, y1, width1, height1, color, opacity(optional).
 	Text:
 		-Writes some text.
-		-Parameters: x, y, message, color, font style.
+		-Parameters: x, y, message, color, font style(optional).
