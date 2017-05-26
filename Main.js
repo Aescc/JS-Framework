@@ -2,16 +2,19 @@ const canvas = document.getElementById( 'gc' );
 const context = canvas.getContext( '2d' );
 
 // Strings
+const version = "v1.0 or something";
 
 // Numbers
+var pizzaNum = 5;
 
 // Booleans
+const isFunny = false;
 
 // Arrays
 var keyMap = [];
 
 // Objects
-var mouse = { x: 0,y: 0 }
+var mouse = { x: 0,y: 0 };
 
 window.onload = function()
 {
@@ -21,8 +24,8 @@ window.onload = function()
 	{
 		Update();
 		Draw();
-	}, 1000/fps);
-	onkeydown = onkeyup = function(e)
+	}, 1000 / fps );
+	onkeydown = onkeyup = function( e )
 	{
 		keyMap[e.keyCode] = e.type == "keydown";
 	}
@@ -50,31 +53,32 @@ function CheckMousePos( e )
 
 function Init()
 {
-	
+	console.log( "Version " + version + " has been loaded successfully!" );
 }
 
 function Update()
 {
 	// Update things here
-	if( keyMap[87] )
+	if( keyMap[87] || keyMap[38] )
 	{
-		// W
+		// W or UP ARROW
 	}
-	else if( keyMap[83] )
+	else if( keyMap[83] || keyMap[40] )
 	{
-		// S
+		// S or DOWN ARROW
 	}
-	if( keyMap[65] )
+	if( keyMap[65] || keyMap[37] )
 	{
-		// A
+		// A or LEFT ARROW
 	}
-	else if( keyMap[68] )
+	else if( keyMap[68] || keyMap[39] )
 	{
-		// D
+		// D or RIGHT ARROW
 	}
 }
 
 function Draw()
 {
 	// Draw things here
+	Rect( 0,0,canvas.width,canvas.height,"#000" );
 }
