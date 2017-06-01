@@ -2,7 +2,7 @@ const canvas = document.getElementById( 'gc' );
 const context = canvas.getContext( '2d' );
 
 // Strings
-const version = "v1.0 or something";
+const version = "v1.1 or something";
 
 // Numbers
 var pizzaNum = 5;
@@ -19,11 +19,11 @@ var mouse = { x: 0,y: 0 };
 window.onload = function()
 {
 	const fps = 30;
-	setInterval(function()
+	setInterval( function()
 	{
 		Update();
 		Draw();
-	}, 1000 / fps );
+	},1000 / fps );
 	onkeydown = onkeyup = function( e )
 	{
 		keyMap[e.keyCode] = e.type == "keydown";
@@ -31,19 +31,19 @@ window.onload = function()
 	canvas.addEventListener( 'mousedown',CheckClick );
 	canvas.addEventListener( 'mousemove',function( e )
 	{
-			mouse.x = CheckMousePos( e ).x;
-			mouse.y = CheckMousePos( e ).y;
+		const rect = canvas.getBoundingClientRect();
+		const root = document.documentElement;
+		mouse.x = e.clientX - rect.left - root.scrollLeft;
+		mouse.y = e.clientY - rect.top - root.scrollTop;
 	} );
 	Init();
 };
 
-function CheckMousePos( e )
+function Init()
 {
-	const rect = canvas.getBoundingClientRect();
-	const root = document.documentElement;
-	const mouseX = e.clientX - rect.left - root.scrollLeft;
-	const mouseY = e.clientY - rect.top - root.scrollTop;
-	return { x: mouseX,y: mouseY };
+	// Initialize things here.
+	
+	console.log( "Version " + version + " has been loaded successfully!" );
 }
 
 function CheckClick()
@@ -51,34 +51,29 @@ function CheckClick()
 	// When you click, this happens.
 }
 
-function Init()
-{
-	console.log( "Version " + version + " has been loaded successfully!" );
-}
-
 function Update()
 {
-	// Update things here
+	// Update things here.
 	if( keyMap[87] || keyMap[38] )
 	{
-		// W or UP ARROW
+		// When W or UP ARROW is pressed.
 	}
 	else if( keyMap[83] || keyMap[40] )
 	{
-		// S or DOWN ARROW
+		// When S or DOWN ARROW is pressed.
 	}
 	if( keyMap[65] || keyMap[37] )
 	{
-		// A or LEFT ARROW
+		// When A or LEFT ARROW is pressed.
 	}
 	else if( keyMap[68] || keyMap[39] )
 	{
-		// D or RIGHT ARROW
+		// When D or RIGHT ARROW is pressed.
 	}
 }
 
 function Draw()
 {
-	// Draw things here
+	// Draw things here.
 	Rect( 0,0,canvas.width,canvas.height,"#000" );
 }
