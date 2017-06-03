@@ -2,13 +2,13 @@ const canvas = document.getElementById( 'gc' );
 const context = canvas.getContext( '2d' );
 
 // Strings
-const version = "v1.1 or something";
+const version = "v1.1.1";
 
 // Numbers
 var pizzaNum = 5;
 
 // Booleans
-const isFunny = false;
+const willSmooth = true; // Disable if using pixel art.
 
 // Arrays
 var keyMap = [];
@@ -42,7 +42,12 @@ window.onload = function()
 function Init()
 {
 	// Initialize things here.
-	
+	if( !willSmooth )
+	{
+		context.imageSmoothingEnabled = false;
+		context.webkitImageSmoothingEnabled = false;
+		context.mozImageSmoothingEnabled = false;
+	}
 	console.log( "Version " + version + " has been loaded successfully!" );
 }
 
