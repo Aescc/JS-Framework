@@ -2,7 +2,7 @@ const canvas = document.getElementById( 'gc' );
 const context = canvas.getContext( '2d' );
 
 // Strings
-const version = "v1.1.1";
+const version = "v1.1.2";
 
 // Numbers
 var pizzaNum = 5;
@@ -26,9 +26,10 @@ window.onload = function()
 	},1000 / fps );
 	onkeydown = onkeyup = function( e )
 	{
-		keyMap[e.keyCode] = e.type == "keydown";
+		keyMap[e.keyCode] = ( e.type == "keydown" );
 	}
-	canvas.addEventListener( 'mousedown',CheckClick );
+	canvas.addEventListener( 'mousedown',OnPress );
+	canvas.addEventListener( 'mouseup',OnRelease );
 	canvas.addEventListener( 'mousemove',function( e )
 	{
 		const rect = canvas.getBoundingClientRect();
@@ -51,9 +52,14 @@ function Init()
 	console.log( "Version " + version + " has been loaded successfully!" );
 }
 
-function CheckClick()
+function OnPress()
 {
-	// When you click, this happens.
+	// When the mouse is pressed, this happens.
+}
+
+function OnRelease()
+{
+	// When the mouse is released, this happens.	
 }
 
 function Update()
