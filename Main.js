@@ -2,7 +2,7 @@ const canvas = document.getElementById( 'gc' );
 const context = canvas.getContext( '2d' );
 
 // Strings
-const version = "v1.1.2";
+const version = "v1.1.3";
 
 // Numbers
 var pizzaNum = 5;
@@ -43,12 +43,9 @@ window.onload = function()
 function Init()
 {
 	// Initialize things here.
-	if( !willSmooth )
-	{
-		context.imageSmoothingEnabled = false;
-		context.webkitImageSmoothingEnabled = false;
-		context.mozImageSmoothingEnabled = false;
-	}
+	context.imageSmoothingEnabled = willSmooth;
+	context.webkitImageSmoothingEnabled = willSmooth;
+	context.mozImageSmoothingEnabled = willSmooth;
 	console.log( "Version " + version + " has been loaded successfully!" );
 }
 
