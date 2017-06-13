@@ -36,6 +36,16 @@ function HitTest( x0,y0,w0,h0,x1,y1,w1,h1 )
 	}
 }
 
+function Line( x0,y0,x1,y1,color,size )
+{
+	context.beginPath();
+	context.moveTo( x0,y0 );
+	context.lineTo( x1,y1 );
+	context.strokeStyle = color;
+	context.lineWidth = size;
+	context.stroke();
+}
+
 function Random( min,max )
 {
 	if( min > max )

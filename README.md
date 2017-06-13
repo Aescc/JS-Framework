@@ -14,6 +14,9 @@ Commands Here:
 	HitTest:
 		-Tests if two user defined rectangles are colliding.
 		-Parameters: x1, y1, width1, height1, x2, y2, width2, height2.
+	Line:
+		-Draws a line.
+		-Parameters: x1, y1, x2, y2, color, width.
 	Random:
 		-Returns a random number with user specified bounds.
 		-Parameters: minimum, maximum.

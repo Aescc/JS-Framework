@@ -2,7 +2,7 @@ const canvas = document.getElementById( 'gc' );
 const context = canvas.getContext( '2d' );
 
 // Strings
-const version = "v1.1.3";
+const version = "v1.1.4";
 
 // Numbers
 var pizzaNum = 5;
