@@ -4,12 +4,14 @@ class Graphics
 	{
 		this.canvas = document.getElementById( 'gc' );
 		const context = this.canvas.getContext( '2d' );
+		
 		this.SCREEN_WIDTH = this.canvas.width;
 		this.SCREEN_HEIGHT = this.canvas.height;
 		//
 		this.Circle = function( x,y,size,color )
 		{
 			context.fillStyle = color;
+			
 			context.beginPath();
 			context.arc( x,y,size,0,2 * Math.PI );
 			context.fill();
@@ -20,10 +22,11 @@ class Graphics
 		}
 		this.Line = function( x0,y0,x1,y1,color,size )
 		{
+			context.strokeStyle = color;
+			
 			context.beginPath();
 			context.moveTo( x0,y0 );
 			context.lineTo( x1,y1 );
-			context.strokeStyle = color;
 			context.lineWidth = size;
 			context.stroke();
 		}
@@ -37,13 +40,14 @@ class Graphics
 		{
 			context.globalAlpha = alpha;
 			context.fillStyle = color;
+			
 			context.fillRect( x,y,width,height );
-			context.globalAlpha = 1.0;
 		}
 		this.Write = function( x,y,message,color,font = "20PX Arial" )
 		{
 			context.fillStyle = color;
 			context.font = font;
+			
 			context.fillText( message,x,y );
 		}
 	}

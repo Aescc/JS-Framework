@@ -1,5 +1,5 @@
 // Strings
-const version = "v2.0.0";
+const version = "v2.0.1";
 
 // Numbers
 var pizzaNum = 5;
@@ -32,18 +32,21 @@ function Init()
 	// Initialize things here.
 	kbd.Init();
 	ms.Init( gfx.canvas );
+	
 	gfx.SetSmoothing( true ); // Set false for pixel art.
-	document.getElementsByTagName( "title" )[0].innerHTML = "JSJ Framework " + version;
-	console.log( "JSJ Framework version " + version + " has been loaded successfully!" );
+	
+	console.log( "JSJ Framework version " + version + " has loaded successfully!" );
 }
 
 function Update()
 {
 	// Update things here.
+	
 }
 
 function Draw()
 {
 	gfx.Rect( 0,0,gfx.SCREEN_WIDTH,gfx.SCREEN_HEIGHT,"#000" );
 	// Draw things here.
+	
 }
