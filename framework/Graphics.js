@@ -2,8 +2,8 @@ class Graphics
 {
 	constructor()
 	{
-		this.canvas = document.getElementById( 'gc' );
-		const context = this.canvas.getContext( '2d' );
+		this.canvas = document.getElementById( "gc" );
+		const context = this.canvas.getContext( "2d" );
 		
 		this.SCREEN_WIDTH = this.canvas.width;
 		this.SCREEN_HEIGHT = this.canvas.height;
@@ -25,16 +25,18 @@ class Graphics
 			context.strokeStyle = color;
 			
 			context.beginPath();
+			
 			context.moveTo( x0,y0 );
 			context.lineTo( x1,y1 );
+			
 			context.lineWidth = size;
 			context.stroke();
 		}
 		this.SetSmoothing = function( willSmooth )
 		{
-			context.imageSmoothingEnabled = willSmooth;
+			context.imageSmoothingEnabled       = willSmooth;
 			context.webkitImageSmoothingEnabled = willSmooth;
-			context.mozImageSmoothingEnabled = willSmooth;
+			context.mozImageSmoothingEnabled    = willSmooth;
 		}
 		this.Rect = function( x,y,width,height,color,alpha = 1.0 )
 		{

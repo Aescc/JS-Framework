@@ -21,7 +21,7 @@ class Calc
 		this.HitTest = function( x0,y0,w0,h0,x1,y1,w1,h1 )
 		{
 			return ( x0 < x1 + w1 && x0 + w0 > x1 &&
-				y0 < y1 + h1 && y0 + h0 > y1 );
+				     y0 < y1 + h1 && y0 + h0 > y1 );
 		}
 		this.Random = function( min,max )
 		{
@@ -32,8 +32,7 @@ class Calc
 				min = temp;
 			}
 			
-			const randomNumber = Math.floor( Math.random() * ( 1 + max - min ) ) + min;
-			return randomNumber;
+			return( Math.floor( Math.random() * ( 1 + max - min ) ) + min );
 		}
 	}
 }

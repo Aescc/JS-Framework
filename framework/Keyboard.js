@@ -13,10 +13,7 @@ class Keyboard
 		}
 		this.KeyDown = function( key )
 		{
-			if( keyMap[key] )
-				return true;
-			else
-				return false;
+			return( keyMap[key] );
 		}
 	}
 }

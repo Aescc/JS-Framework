@@ -8,15 +8,15 @@ class Mouse
 		//
 		this.Init = function( canvas )
 		{
-			canvas.addEventListener( 'mousedown',function()
+			canvas.addEventListener( "mousedown",function()
 			{
 				isDown = true;
 			} );
-			canvas.addEventListener( 'mouseup',function()
+			canvas.addEventListener( "mouseup",function()
 			{
 				isDown = false;
 			} );
-			canvas.addEventListener( 'mousemove',function( e )
+			canvas.addEventListener( "mousemove",function( e )
 			{
 				const rect = canvas.getBoundingClientRect();
 				const root = document.documentElement;
@@ -24,14 +24,14 @@ class Mouse
 				y = e.clientY - rect.top - root.scrollTop;
 			} );
 		}
-		this.pos = function()
+		this.Pos = function()
 		{
 			return {
 				x:	x,
 				y:	y
 			};
 		}
-		this.isDown = function()
+		this.IsDown = function()
 		{
 			return isDown;
 		}
