@@ -1,5 +1,5 @@
 // Strings
-const version = "v2.0.3";
+const version = "v2.0.4";
 
 // Numbers
 var pizzaNum = 5;
@@ -35,7 +35,7 @@ function Init()
 	
 	gfx.SetSmoothing( true ); // Set false for pixel art.
 	
-	console.log( "JSJ Framework version " + version + " has loaded successfully!" );
+	console.log( "JSJ Framework " + version + " has loaded successfully!" );
 }
 
 function Update()
