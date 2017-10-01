@@ -1,52 +1,59 @@
-// Strings
-const version = "v2.0.4";
+// Strings!
+const version = "v2.1.0";
 
-// Numbers
+// Numbers!
 var pizzaNum = 5;
 
-// Booleans
+// Booleans!
 const isFunny = false;
 
-// Arrays
+// Arrays!
 var sizes = [ 5,12,10 ];
 
-// Objects
+// Objects!
 var calc = new Calc();
-var gfx = new Graphics();
-var kbd = new Keyboard();
-var ms = new Mouse();
+var gfx  = new Graphics();
+var kbd  = new Keyboard();
+var ms   = new Mouse();
 
 window.onload = function()
 {
-	const fps = 30;
+	const FPS = 30;
+	
 	setInterval( function()
 	{
 		Update();
 		Draw();
-	},1000 / fps );
+	},1000 / FPS );
+	
 	Init();
 };
 
 function Init()
 {
-	// Initialize things here.
 	kbd.Init();
 	ms.Init( gfx.canvas );
 	
 	gfx.SetSmoothing( true ); // Set false for pixel art.
+	
+	// \/ Initialize things! \/
+	
+	// /\ Initialize!        /\
 	
 	console.log( "JSJ Framework " + version + " has loaded successfully!" );
 }
 
 function Update()
 {
-	// Update things here.
+	// \/ Update things here. \/
 	
+	// /\                     /\
 }
 
 function Draw()
 {
 	gfx.Rect( 0,0,gfx.SCREEN_WIDTH,gfx.SCREEN_HEIGHT,"#000" );
-	// Draw things here.
+	// \/ Draw things here. \/
 	
+	// /\                   /\
 }
