@@ -1,5 +1,5 @@
 // Strings!
-const version = "v2.1.0";
+const version = "v2.1.1";
 
 // Numbers!
 var pizzaNum = 5;
@@ -15,6 +15,7 @@ var calc = new Calc();
 var gfx  = new Graphics();
 var kbd  = new Keyboard();
 var ms   = new Mouse();
+var ajax = new AJAX();
 
 window.onload = function()
 {
