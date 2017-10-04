@@ -1,14 +1,18 @@
 // Strings!
-const version = "v2.1.1";
+const version = "v2.1.2";
 
 // Numbers!
-var pizzaNum = 5;
+const SCR_WIDTH  = 500;
+const SCR_HEIGHT = 500;
 
 // Booleans!
 const isFunny = false;
 
 // Arrays!
-var sizes = [ 5,12,10 ];
+const includeFiles =
+[
+	"js/your_file_name.js"
+];
 
 // Objects!
 var calc = new Calc();
@@ -32,10 +36,19 @@ window.onload = function()
 
 function Init()
 {
+	gfx.Init( SCR_WIDTH,SCR_HEIGHT );
 	kbd.Init();
 	ms.Init( gfx.canvas );
 	
 	gfx.SetSmoothing( true ); // Set false for pixel art.
+	
+	for( var i in includeFiles )
+	{
+		var userFile = document.createElement( "script" );
+		userFile.src = includeFiles[i];
+		
+		document.getElementById( "USER_SCRIPTS" ).appendChild( userFile );
+	}
 	
 	// \/ Initialize things! \/
 	
