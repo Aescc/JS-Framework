@@ -1,18 +1,14 @@
 // Strings!
-const version = "v2.1.2";
+const version = "v2.1.3";
 
 // Numbers!
-const SCR_WIDTH  = 500;
-const SCR_HEIGHT = 500;
+var pizzaNum = 3;
 
 // Booleans!
 const isFunny = false;
 
 // Arrays!
-const includeFiles =
-[
-	"js/your_file_name.js"
-];
+var shoeSizes = [ 3,12,6 ];
 
 // Objects!
 var calc = new Calc();
@@ -36,24 +32,15 @@ window.onload = function()
 
 function Init()
 {
-	gfx.Init( SCR_WIDTH,SCR_HEIGHT );
+	gfx.Init();
 	kbd.Init();
 	ms.Init( gfx.canvas );
 	
 	gfx.SetSmoothing( true ); // Set false for pixel art.
-	
-	for( var i in includeFiles )
-	{
-		var userFile = document.createElement( "script" );
-		userFile.src = includeFiles[i];
-		
-		document.getElementById( "USER_SCRIPTS" ).appendChild( userFile );
-	}
-	
 	// \/ Initialize things! \/
 	
-	// /\ Initialize!        /\
-	
+	// /\                    /\
+	// 
 	console.log( "JSJ Framework " + version + " has loaded successfully!" );
 }
 
