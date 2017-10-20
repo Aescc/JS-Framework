@@ -1,5 +1,5 @@
 // Strings!
-const version = "v2.1.3";
+const version = "v2.1.4";
 
 // Numbers!
 var pizzaNum = 3;

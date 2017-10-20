@@ -5,12 +5,15 @@ class Graphics
 		this.canvas = document.getElementById( "gc" );
 		this.context = this.canvas.getContext( "2d" );
 		
+		var images = [];
+		var curImage = 0;
 		//
 		this.Init = function( width,height )
 		{
 			this.SCREEN_WIDTH  = this.canvas.width;
 			this.SCREEN_HEIGHT = this.canvas.height;
 		}
+		
 		this.Circle = function( x,y,size,color )
 		{
 			this.context.fillStyle = color;
@@ -19,10 +22,40 @@ class Graphics
 			this.context.arc( x,y,size,0,2 * Math.PI );
 			this.context.fill();
 		}
+		
 		this.Draw = function( x,y,image )
 		{
 			this.context.drawImage( image,x,y );
 		}
+		
+		this.LoadImage = function( source )
+		{
+			const nowImage = curImage;
+			++curImage;
+			
+			images[nowImage] = new Image();
+			images[nowImage].src = source;
+			
+			return nowImage;
+		}
+		
+		this.DrawImage = function( id,x = 0,y = 0,width = 9999.8756481,height = 9999.8756481 )
+		{
+			var drawWidth = images[id].width;
+			var drawHeight = images[id].height;
+			
+			if( width != 9999.8756481 )
+			{
+				drawWidth = width;
+			}
+			if( height != 9999.8756481 )
+			{
+				drawHeight = height;
+			}
+			
+			this.context.drawImage( images[id],x,y,width,height );
+		}
+		
 		this.Line = function( x0,y0,x1,y1,color,size )
 		{
 			this.context.strokeStyle = color;
@@ -35,12 +68,14 @@ class Graphics
 			this.context.lineWidth = size;
 			this.context.stroke();
 		}
+		
 		this.SetSmoothing = function( willSmooth )
 		{
 			this.context.imageSmoothingEnabled       = willSmooth;
 			this.context.webkitImageSmoothingEnabled = willSmooth;
 			this.context.mozImageSmoothingEnabled    = willSmooth;
 		}
+		
 		this.Rect = function( x,y,width,height,color,alpha = 1.0 )
 		{
 			this.context.globalAlpha = alpha;
@@ -48,6 +83,7 @@ class Graphics
 			
 			this.context.fillRect( x,y,width,height );
 		}
+		
 		this.Write = function( x,y,message,color,font = "20PX Arial" )
 		{
 			this.context.fillStyle = color;
