@@ -39,7 +39,7 @@ class Graphics
 				drawHeight = height;
 			}
 			
-			this.context.drawImage( images[id],x,y,width,height );
+			this.context.drawImage( images[id],x,y,drawWidth,drawHeight );
 		}
 		
 		this.DrawLine = function( x0,y0,x1,y1,size,color )
