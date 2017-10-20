@@ -1,11 +1,11 @@
 // Strings!
-const version = "v2.1.4";
+const version = "v2.1.5";
 
 // Numbers!
 var pizzaNum = 3;
 
 // Booleans!
-const isFunny = false;
+const funny = false;
 
 // Arrays!
 var shoeSizes = [ 3,12,6 ];
@@ -19,15 +19,15 @@ var ajax = new AJAX();
 
 window.onload = function()
 {
-	const FPS = 30;
+	Init();
 	
+	const FPS = 30;
 	setInterval( function()
 	{
 		Update();
 		Draw();
 	},1000 / FPS );
-	
-	Init();
+	console.log( "JSJ Framework " + version + " has loaded successfully!" );
 };
 
 function Init()
@@ -36,25 +36,20 @@ function Init()
 	kbd.Init();
 	ms.Init( gfx.canvas );
 	
-	gfx.SetSmoothing( true ); // Set false for pixel art.
+	gfx.SetSmoothing( false ); // Set false for pixel perfect.
 	// \/ Initialize things! \/
 	
-	// /\                    /\
-	// 
-	console.log( "JSJ Framework " + version + " has loaded successfully!" );
 }
 
 function Update()
 {
 	// \/ Update things here. \/
 	
-	// /\                     /\
 }
 
 function Draw()
 {
-	gfx.Rect( 0,0,gfx.SCREEN_WIDTH,gfx.SCREEN_HEIGHT,"#000" );
+	gfx.DrawRect( 0,0,gfx.SCREEN_WIDTH,gfx.SCREEN_HEIGHT,"#000" );
 	// \/ Draw things here. \/
 	
-	// /\                   /\
 }
