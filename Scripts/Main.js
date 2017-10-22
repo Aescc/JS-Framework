@@ -18,6 +18,8 @@ var ms   = new Mouse();
 var ajax = new AJAX();
 var sfx = new Audio();
 
+var pl = new Player();
+
 window.onload = function()
 {
 	Init();
@@ -45,12 +47,12 @@ function Init()
 function Update()
 {
 	// \/ Update things here. \/
-	
+	pl.Update();
 }
 
 function Draw()
 {
 	gfx.DrawRect( 0,0,gfx.SCREEN_WIDTH,gfx.SCREEN_HEIGHT,"#000" );
 	// \/ Draw things here. \/
-	
+	pl.Draw();
 }

@@ -4,9 +4,9 @@ class Player
 {
 constructor()
 {
-	const width = 25;
-	const height = 60;
-	var pos = { x: 50,y: 50 };
+	const width = 55;
+	const height = 55;
+	var pos = { x: 0,y: 0 };
 	
 	// 
 	this.Init = function()
@@ -20,7 +20,7 @@ constructor()
 	}
 	this.Draw = function()
 	{
-		gfx.Rect( pos.x,pos.y,width,height,"#FA0" );
+		gfx.DrawRect( pos.x,pos.y,width,height,"#FA0" );
 	}
 }
 }
