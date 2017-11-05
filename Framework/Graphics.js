@@ -10,8 +10,8 @@ class Graphics
 		//
 		this.Init = function( width,height )
 		{
-			this.SCREEN_WIDTH  = this.canvas.width;
-			this.SCREEN_HEIGHT = this.canvas.height;
+			this.ScreenWidth  = this.canvas.width;
+			this.ScreenHeight = this.canvas.height;
 		}
 		
 		this.LoadImage = function( source )
