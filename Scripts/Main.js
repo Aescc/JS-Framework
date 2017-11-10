@@ -1,6 +1,5 @@
 "use strict";
 // Create variables.
-const version = "v2.1.6";
 let pizzaNum = 3;
 const funny = false;
 let shoeSizes = [ 3,12,6 ];
@@ -24,7 +23,8 @@ window.onload = function()
 		Update();
 		Draw();
 	},1000 / FPS );
-	console.log( "JSJ Framework " + version + " has loaded successfully!" );
+	
+	console.log( document.getElementById( "ver" ).innerHTML + " has loaded successfully!" );
 };
 
 function Init()
@@ -32,8 +32,6 @@ function Init()
 	gfx.Init();
 	kbd.Init();
 	ms.Init( gfx.canvas );
-
-	gfx.SetSmoothing( true ); // Set false for pixel perfect.
 	// \/ Initialize things! \/
 	pl.Init();
 
