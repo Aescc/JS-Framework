@@ -2,9 +2,9 @@ class Mouse
 {
 constructor()
 {
-	var x = 0;
-	var y = 0;
-	var isDown = false;
+	let x = 0;
+	let y = 0;
+	let isDown = false;
 	//
 	this.Init = function( canvas )
 	{
@@ -23,7 +23,7 @@ constructor()
 			x = e.clientX - rect.left - root.scrollLeft;
 			y = e.clientY - rect.top - root.scrollTop;
 		} );
-		
+
 		x = gfx.ScreenWidth / 2;
 		y = gfx.ScreenHeight / 2;
 	}

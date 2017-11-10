@@ -1,23 +1,23 @@
-"use strict"
+"use strict";
 // Create variables.
 const version = "v2.1.6";
-var pizzaNum = 3;
+let pizzaNum = 3;
 const funny = false;
-var shoeSizes = [ 3,12,6 ];
-var pl = new Player();
+let shoeSizes = [ 3,12,6 ];
+let pl = new Player();
 
-// 
-var calc = new Calc();
-var gfx  = new Graphics();
-var kbd  = new Keyboard();
-var ms   = new Mouse();
-var ajax = new AJAX();
-var sfx = new Audio();
+//
+let calc = new Calc();
+let gfx  = new Graphics();
+let kbd  = new Keyboard();
+let ms   = new Mouse();
+let ajax = new AJAX();
+let sfx = new Audio();
 
 window.onload = function()
 {
 	Init();
-	
+
 	const FPS = 30;
 	setInterval( function()
 	{
@@ -32,18 +32,18 @@ function Init()
 	gfx.Init();
 	kbd.Init();
 	ms.Init( gfx.canvas );
-	
+
 	gfx.SetSmoothing( true ); // Set false for pixel perfect.
 	// \/ Initialize things! \/
 	pl.Init();
-	
+
 }
 
 function Update()
 {
 	// \/ Update things here. \/
 	pl.Update();
-	
+
 }
 
 function Draw()

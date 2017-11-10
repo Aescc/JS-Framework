@@ -2,18 +2,18 @@ class AJAX
 {
 constructor()
 {
-	var responseText = "";
-	
-	// 
+	let responseText = "";
+
+	//
 	this.Send = function( url,method = "GET" )
 	{
-		var request = new XMLHttpRequest();
+		let request = new XMLHttpRequest();
 		request.onreadystatechange = function()
 		{
 			if( this.readyState == 4 && this.status == 200 )
 			{
 				responseText = this.responseText;
-				
+
 				return true;
 			}
 			else
@@ -24,7 +24,7 @@ constructor()
 		request.open( method,url,true );
 		request.send();
 	}
-	
+
 	this.Response = function()
 	{
 		return responseText;

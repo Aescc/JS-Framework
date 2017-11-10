@@ -4,16 +4,16 @@ constructor()
 {
 	this.canvas = document.getElementById( "gc" );
 	this.context = this.canvas.getContext( "2d" );
-	
-	var images = [];
-	var curImage = 0;
+
+	let images = [];
+	let curImage = 0;
 	//
 	this.Init = function( width,height )
 	{
 		this.ScreenWidth  = this.canvas.width;
 		this.ScreenHeight = this.canvas.height;
 	}
-	
+
 	this.LoadImage = function( source )
 	{
 		const nowImage = curImage;
@@ -25,8 +25,8 @@ constructor()
 	// TODO: Make this less gross.
 	this.DrawImage = function( id,x = 0,y = 0,width = 9999.8756481,height = 9999.8756481 )
 	{
-		var drawWidth = images[id].width;
-		var drawHeight = images[id].height;
+		let drawWidth = images[id].width;
+		let drawHeight = images[id].height;
 		if( width != 9999.8756481 )
 		{
 			drawWidth = width;
@@ -37,7 +37,7 @@ constructor()
 		}
 		this.context.drawImage( images[id],x,y,drawWidth,drawHeight );
 	}
-	
+
 	this.DrawLine = function( x0,y0,x1,y1,size,color )
 	{
 		this.context.strokeStyle = color;
@@ -47,7 +47,7 @@ constructor()
 		this.context.lineWidth = size;
 		this.context.stroke();
 	}
-	
+
 	this.DrawCircle = function( x,y,size,color )
 	{
 		this.context.fillStyle = color;
@@ -55,24 +55,24 @@ constructor()
 		this.context.arc( x,y,size,0,2 * Math.PI );
 		this.context.fill();
 	}
-	
+
 	this.DrawRect = function( x,y,width,height,color )
 	{
 		this.context.fillStyle = color;
 		this.context.fillRect( x,y,width,height );
 	}
-	
+
 	this.DrawText = function( x,y,message,color )
 	{
 		this.context.fillStyle = color;
 		this.context.fillText( message,x,y );
 	}
-	
+
 	this.Alpha = function( alpha )
 	{
 		this.context.globalAlpha = alpha;
 	}
-	
+
 	this.SetSmoothing = function( willSmooth )
 	{
 		this.context.imageSmoothingEnabled       = willSmooth;

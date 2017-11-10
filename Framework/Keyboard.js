@@ -2,7 +2,7 @@ class Keyboard
 {
 constructor()
 {
-	var keyMap = [];
+	let keyMap = [];
 	//
 	this.Init = function()
 	{
@@ -11,7 +11,7 @@ constructor()
 			keyMap[e.keyCode] = ( e.type == "keydown" );
 		}
 	}
-	
+
 	this.KeyDown = function( key )
 	{
 		return( keyMap[key] );
@@ -20,7 +20,7 @@ constructor()
 	{
 		return( !keyMap[key] );
 	}
-	
+
 	this.CharDown = function( character )
 	{
 		const key = character.charCodeAt( 0 );
