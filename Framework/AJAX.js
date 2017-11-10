@@ -1,33 +1,33 @@
 class AJAX
 {
-	constructor()
+constructor()
+{
+	let responseText = "";
+
+	//
+	this.Send = function( url,method = "GET" )
 	{
-		var responseText = "";
-		
-		// 
-		this.Send = function( url,method = "GET" )
+		let request = new XMLHttpRequest();
+		request.onreadystatechange = function()
 		{
-			var request = new XMLHttpRequest();
-			
-			request.onreadystatechange = function()
+			if( this.readyState == 4 && this.status == 200 )
 			{
-				if( this.readyState == 4 && this.status == 200 )
-				{
-					responseText = this.responseText;
-					
-					return true;
-				}
-				else
-					return false;
+				responseText = this.responseText;
+
+				return true;
 			}
-			
-			request.open( method,url,true );
-			request.send();
+			else
+			{
+				return false;
+			}
 		}
-		
-		this.Response = function()
-		{
-			return responseText;
-		}
+		request.open( method,url,true );
+		request.send();
 	}
+
+	this.Response = function()
+	{
+		return responseText;
+	}
+}
 }
