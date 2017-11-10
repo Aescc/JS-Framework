@@ -52,7 +52,7 @@ function Update()
 
 function Draw()
 {
-	gfx.DrawRect( 0,0,gfx.SCREEN_WIDTH,gfx.SCREEN_HEIGHT,"#000" );
+	gfx.DrawRect( 0,0,gfx.ScreenWidth,gfx.ScreenHeight,"#000" );
 	// \/ Draw things here. \/
 	pl.Draw();
 }
