@@ -9,9 +9,7 @@ constructor()
 	{
 		const nowSound = curSound;
 		++curSound;
-		
 		sounds[nowSound] = new Audio( source );
-		
 		return nowSound;
 	}
 	

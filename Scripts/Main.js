@@ -1,4 +1,5 @@
 "use strict"
+// Create variables.
 const version = "v2.1.6";
 var pizzaNum = 3;
 const funny = false;
@@ -34,6 +35,7 @@ function Init()
 	
 	gfx.SetSmoothing( true ); // Set false for pixel perfect.
 	// \/ Initialize things! \/
+	pl.Init();
 	
 }
 

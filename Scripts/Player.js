@@ -11,7 +11,8 @@ constructor()
 	// 
 	this.Init = function()
 	{
-		
+		pos.x = gfx.ScreenWidth / 2;
+		pos.y = gfx.ScreenHeight / 2;
 	}
 	this.Update = function()
 	{
@@ -20,7 +21,7 @@ constructor()
 	}
 	this.Draw = function()
 	{
-		gfx.DrawRect( pos.x,pos.y,width,height,"#FA0" );
+		gfx.DrawRect( pos.x - width / 2,pos.y - height / 2,width,height,"#FA0" );
 	}
 }
 }
