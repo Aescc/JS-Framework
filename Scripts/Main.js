@@ -1,24 +1,17 @@
-// Strings!
+"use strict"
 const version = "v2.1.6";
-
-// Numbers!
 var pizzaNum = 3;
-
-// Booleans!
 const funny = false;
-
-// Arrays!
 var shoeSizes = [ 3,12,6 ];
+var pl = new Player();
 
-// Objects!
+// 
 var calc = new Calc();
 var gfx  = new Graphics();
 var kbd  = new Keyboard();
 var ms   = new Mouse();
 var ajax = new AJAX();
 var sfx = new Audio();
-
-var pl = new Player();
 
 window.onload = function()
 {
@@ -39,7 +32,7 @@ function Init()
 	kbd.Init();
 	ms.Init( gfx.canvas );
 	
-	gfx.SetSmoothing( false ); // Set false for pixel perfect.
+	gfx.SetSmoothing( true ); // Set false for pixel perfect.
 	// \/ Initialize things! \/
 	
 }
@@ -48,6 +41,7 @@ function Update()
 {
 	// \/ Update things here. \/
 	pl.Update();
+	
 }
 
 function Draw()
@@ -55,4 +49,5 @@ function Draw()
 	gfx.DrawRect( 0,0,gfx.ScreenWidth,gfx.ScreenHeight,"#000" );
 	// \/ Draw things here. \/
 	pl.Draw();
+	
 }
