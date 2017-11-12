@@ -16,14 +16,15 @@ let sfx = new Audio();
 window.onload = function()
 {
 	Init();
-
 	const FPS = 30;
 	setInterval( function()
 	{
-		Update();
-		Draw();
+		if( gfx.Loaded() )
+		{
+			Update();
+			Draw();
+		}
 	},1000 / FPS );
-	
 	console.log( document.getElementById( "ver" ).innerHTML + " has loaded successfully!" );
 };
 
@@ -34,14 +35,14 @@ function Init()
 	ms.Init( gfx.canvas );
 	// \/ Initialize things! \/
 	pl.Init();
-
+	
 }
 
 function Update()
 {
 	// \/ Update things here. \/
 	pl.Update();
-
+	
 }
 
 function Draw()

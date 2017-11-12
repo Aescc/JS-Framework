@@ -7,19 +7,46 @@ constructor()
 
 	let images = [];
 	let curImage = 0;
+	let curLoadedImage = 0;
 	//
 	this.Init = function( width,height )
 	{
 		this.ScreenWidth  = this.canvas.width;
 		this.ScreenHeight = this.canvas.height;
+		
+		this.context.fillStyle = "#29F";
+		this.context.fillRect( 0,0,this.ScreenWidth,this.ScreenHeight );
+		{
+			this.context.fillStyle = "#23C";
+			this.context.font = "50PX Tahoma";
+			this.context.textAlign = "center";
+			this.context.fillText( "Loading...",this.ScreenWidth / 2,this.ScreenHeight / 2 );
+		}
 	}
-
-	this.LoadImage = function( source )
+	
+	this.Loaded = function()
+	{
+		return ( curLoadedImage === curImage );
+	}
+	
+	this.LoadImage = function( source,async = false )
 	{
 		const nowImage = curImage;
 		++curImage;
 		images[nowImage] = new Image();
 		images[nowImage].src = source;
+		if( !async )
+		{
+			images[nowImage].onload = function()
+			{
+				++curLoadedImage;
+				console.log( "Image " + curLoadedImage + " loaded successfully!" );
+			}
+		}
+		else
+		{
+			++curLoadedImage;
+		}
 		return nowImage;
 	}
 	// TODO: Make this less gross.
