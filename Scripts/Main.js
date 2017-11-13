@@ -1,21 +1,18 @@
 "use strict";
-// Create variables.
-let pizzaNum = 3;
-const funny = false;
-let shoeSizes = [ 3,12,6 ];
-let pl = new Player();
-
-//
 let calc = new Calc();
 let gfx  = new Graphics();
 let kbd  = new Keyboard();
 let ms   = new Mouse();
 let ajax = new AJAX();
 let sfx = new Audio();
+// Create variables here.
+let pizzaNum = 3;
+const funny = false;
+let shoeSizes = [ 3,12,6 ];
+let pl = new Player();
 
 window.onload = function()
 {
-	Init();
 	const FPS = 30;
 	setInterval( function()
 	{
@@ -24,7 +21,13 @@ window.onload = function()
 			Update();
 			Draw();
 		}
+		else
+		{
+			gfx.PlayIntro();
+		}
 	},1000 / FPS );
+	
+	Init();
 	console.log( document.getElementById( "ver" ).innerHTML + " has loaded successfully!" );
 };
 

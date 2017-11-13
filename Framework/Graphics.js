@@ -8,12 +8,25 @@ constructor()
 	let images = [];
 	let curImage = 0;
 	let curLoadedImage = 0;
+	
+	let anim =
+	[
+		new Image(),new Image(),new Image()
+	];
+	for( let i in anim )
+	{
+		anim[i].src = "Images/Loading/Throw" + i + ".png";
+	}
+	let curFrame = 0.0;
 	//
 	this.Init = function( width,height )
 	{
 		this.ScreenWidth  = this.canvas.width;
 		this.ScreenHeight = this.canvas.height;
-		
+	}
+	
+	this.PlayIntro = function()
+	{
 		this.context.fillStyle = "#29F";
 		this.context.fillRect( 0,0,this.ScreenWidth,this.ScreenHeight );
 		{
@@ -22,11 +35,21 @@ constructor()
 			this.context.textAlign = "center";
 			this.context.fillText( "Loading...",this.ScreenWidth / 2,this.ScreenHeight / 2 );
 		}
+		
+		{
+			const animPlaySpeed = 0.08;
+			this.context.drawImage( anim[Math.floor( curFrame += animPlaySpeed )],
+			                        this.ScreenWidth / 2 - 128 / 2,this.ScreenHeight / 2 + 64 / 2 );
+			if( curFrame > anim.length - animPlaySpeed )
+			{
+				curFrame = 0.0;
+			}
+		}
 	}
 	
 	this.Loaded = function()
 	{
-		return ( curLoadedImage === curImage );
+		return( curLoadedImage === curImage );
 	}
 	
 	this.LoadImage = function( source,async = false )
@@ -35,12 +58,13 @@ constructor()
 		++curImage;
 		images[nowImage] = new Image();
 		images[nowImage].src = source;
+		// TODO: Make this prettier.
 		if( !async )
 		{
 			images[nowImage].onload = function()
 			{
 				++curLoadedImage;
-				console.log( "Image " + curLoadedImage + " loaded successfully!" );
+				// console.log( "Image " + nowImage + " loaded successfully!" );
 			}
 		}
 		else
