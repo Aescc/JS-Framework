@@ -73,22 +73,19 @@ constructor()
 		}
 		return nowImage;
 	}
-	// TODO: Make this less gross.
-	this.DrawImage = function( id,x = 0,y = 0,width = 9999.8756481,height = 9999.8756481 )
+	
+	this.DrawImage = function( id,x = 0,y = 0,width,height )
 	{
-		let drawWidth = images[id].width;
-		let drawHeight = images[id].height;
-		if( width != 9999.8756481 )
+		if( width == undefined || height == undefined )
 		{
-			drawWidth = width;
+			this.context.drawImage( images[id],x,y );
 		}
-		if( height != 9999.8756481 )
+		else
 		{
-			drawHeight = height;
+			this.context.drawImage( images[id],x,y,width,height );
 		}
-		this.context.drawImage( images[id],x,y,drawWidth,drawHeight );
 	}
-
+	
 	this.DrawLine = function( x0,y0,x1,y1,size,color )
 	{
 		this.context.strokeStyle = color;
