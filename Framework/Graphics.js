@@ -54,6 +54,14 @@ constructor()
 	
 	this.LoadImage = function( source,async = false )
 	{
+		for( let i in images )
+		{
+			if( images[i] === source )
+			{
+				return i;
+			}
+		}
+		
 		const nowImage = curImage;
 		++curImage;
 		images[nowImage] = new Image();
